@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../assets/logo.svg";
+import logo from "../public/logo.svg";
 import { IoIosSearch } from "react-icons/io";
 import { TbLogin } from "react-icons/tb";
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
