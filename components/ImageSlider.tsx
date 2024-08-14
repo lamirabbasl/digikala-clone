@@ -24,7 +24,7 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="relative w-screen mt-6  overflow-hidden">
+    <div className="relative w-full mt-6  overflow-hidden">
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}

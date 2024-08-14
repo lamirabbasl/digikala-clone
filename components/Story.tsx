@@ -2,7 +2,7 @@
 
 import stories from "@/utilities/story.js";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
 interface Story {
@@ -11,9 +11,13 @@ interface Story {
 }
 function Story() {
   const scrollRef: any = useRef(null);
+  const [rightscroll, setRightscroll] = useState(false);
 
   const scroll = (scrollOffset: any) => {
+    const { scrollLeft } = scrollRef.current;
     scrollRef.current.scrollLeft += scrollOffset;
+    if (scrollLeft == 0) setRightscroll(false);
+    else setRightscroll(true);
   };
 
   return (
@@ -45,7 +49,7 @@ function Story() {
           </div>
         ))}
       </div>
-      {stories.length > 14 && (
+      {stories.length > 14 && rightscroll && (
         <button
           onClick={() => scroll(100)}
           className=" absolute right-[200px] top-[135px]  mt-[40px] w-[38px] bg-white shadow-md hover:bg-gray-300 h-[36px] rounded-full  "
